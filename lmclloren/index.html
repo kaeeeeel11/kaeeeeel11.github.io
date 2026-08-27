@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lance's Portfolio</title>
+
+  <!-- Google Fonts for cursive logo -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: URL('https://i.pinimg.com/originals/38/6f/98/386f9898fcc92dd39f9fe5d15968c6b0.jpg?nii=t') no-repeat center center fixed;
+      background-size: cover;
+      color: #0d47a1;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 10px 60px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-sizing: border-box;
+    }
+
+    /* Logo name in cursive */
+    .logo-name {
+      margin: 0;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.2rem;
+      color: #1565c0;
+      font-weight: normal;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      margin-right: 40px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #0d47a1;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: #1565c0;
+      color: white;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 100px 40px 60px;
+      margin-bottom: 40px;
+    }
+
+    .upload-box, .uploaded-box {
+      background-color: rgba(255,255,255,0.95);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      margin-bottom: 25px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .home-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .home-left {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .home-right {
+      flex: 2;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .profile-pic {
+      width: 320px;
+      border-radius: 50%;
+      border: 6px solid #1565c0;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input[type="file"] {
+      padding: 5px;
+    }
+
+    button {
+      background-color: #1565c0;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-size: 0.9rem;
+      margin-left: 8px;
+    }
+
+    button:hover {
+      background-color: #0d47a1;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      background: #e3f2fd;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1, h2 {
+      color: #1565c0;
+    }
+
+    footer {
+      background-color: rgba(255,255,255,0.95);
+      color: #0d47a1;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
+    }
+
+    .footer-container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .footer-links {
+      margin-top: 10px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #1565c0;
+      margin: 0 8px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Navigation -->
+  <div class="navbar">
+    <h2 class="logo-name">Lance Michael C. Lloren</h2>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#assignments">Assignments</a>
+      <a href="#laboratories">Laboratories</a>
+      <a href="#quizzes">Quizzes</a>
+      <a href="#examinations">Examinations</a>
+    </div>
+  </div>
+
+  <!-- Home Section -->
+  <section id="home">
+    <div class="upload-box">
+      <div class="home-container">
+        <div class="home-left">
+          <img src="c:\Users\Lance\Downloads\dfe04dd3-d10f-45b6-b95a-f379737ff85a.jpg" 
+               alt="Profile Picture" class="profile-pic">
+        </div>
+        <div class="home-right">
+          <h1>Welcome to My Portfolio</h1>
+          <p>Hello! I’m Lance Michael C. Lloren, a BSCS student who is passionate about learning and growing in the field of Computer Science. This portfolio is a collection of my academic work, projects, and experiences that show my progress and skills in programming, web development, and digital design. It represents my journey as a student, my dedication to improving, and my goal to apply what I learn to real-world challenges in technology.</p>
+          <p>Connect with me:</p>
+          <ul>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<ul>
+  <li>
+    <a href="https://www.facebook.com/lance.michael.lloren123" target="_blank">
+      <i class="fab fa-facebook"></i> Facebook: Lance Michael Lloren
+    </a>
+  </li>
+  <li>
+    <a href="https://accounts.google.com/v3/signin/identifier?continue=https://mail.google.com/mail/?service%3Dmail%26flowName%3DGlifWebSignIn%26flowEntry%3DAccountChooser%26ec%3Dasw-gmail-globalnav-signin&uj=gafb-gmail_asw-globalnav-en&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-133095552:1787750992171066" target="_blank">
+      <i class="fab fa-google"></i> Email: lmlloren@pcu.edu.ph
+    </a>
+  </li>
+  <li>
+    <a href="https://www.instagram.com/" target="_blank">
+      <i class="fab fa-instagram"></i> Instagram: Kaeeeeel
+    </a>
+  </li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assignments Section -->
+  <section id="assignments">
+    <div class="upload-box">
+      <h1>Assignments</h1>
+      <p>Upload your assignments here:</p>
+      <form id="assignmentsForm">
+  <input type="file" id="assignmentsInput" multiple>
+  <!-- Password field -->
+  <input type="password" id="assignmentsPassword" placeholder="Enter password" required>
+  <button type="submit">Upload</button>
+  <button type="button" id="clearAssignments">Clear All</button>
+</form>
+
+      </form>
+    </div>
+    <div class="uploaded-box">
+      <h2>Uploaded Assignments</h2>
+      <ul id="assignmentsList"></ul>
+    </div>
+  </section>
+
+  <!-- Laboratories Section -->
+  <section id="laboratories">
+    <div class="upload-box">
+      <h1>Laboratories</h1>
+      <p>Upload your laboratory work here:</p>
+      <form id="labsForm">
+       <input type="file" id="assignmentsInput" multiple>
+  <!-- Password field -->
+  <input type="password" id="assignmentsPassword" placeholder="Enter password" required>
+  <button type="submit">Upload</button>
+  <button type="button" id="clearAssignments">Clear All</button>
+</form>
+    </div>
+    <div class="uploaded-box">
+      <h2>Uploaded Labs</h2>
+      <ul id="labsList"></ul>
+    </div>
+  </section>
+
+  <!-- Quizzes Section -->
+  <section id="quizzes">
+    <div class="upload-box">
+      <h1>Quizzes</h1>
+      <p>Upload your quizzes here:</p>
+      <form id="quizzesForm">
+        <input type="file" id="assignmentsInput" multiple>
+  <!-- Password field -->
+  <input type="password" id="assignmentsPassword" placeholder="Enter password" required>
+  <button type="submit">Upload</button>
+  <button type="button" id="clearAssignments">Clear All</button>
+</form>
+    </div>
+    <div class="uploaded-box">
+      <h2>Uploaded Quizzes</h2>
+      <ul id="quizzesList"></ul>
+    </div>
+  </section>
+
+  <!-- Examinations Section -->
+  <section id="examinations">
+    <div class="upload-box">
+      <h1>Examinations</h1>
+      <p>Upload your examinations here:</p>
+      <form id="examsForm">
+       <input type="file" id="assignmentsInput" multiple>
+  <!-- Password field -->
+  <input type="password" id="assignmentsPassword" placeholder="Enter password" required>
+  <button type="submit">Upload</button>
+  <button type="button" id="clearAssignments">Clear All</button>
+</form>
+    </div>
+    <div class="uploaded-box">
+      <h2>Uploaded Exams</h2>
+      <ul id="examsList"></ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2026 Lance Michael C. Lloren | BSCS Portfolio</p>
+      <p>Crafted with dedication and passion for Computer Science.</p>
+      <div class="footer-links">
+        <a href="#home">Home</a> |
+        <a href="#assignments">Assignments</a> |
+        <a href="#laboratories">Labs</a> |
+        <a href="#quizzes">Quizzes</a> |
+        <a href="#examinations">Exams</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>// Set your chosen password
+const portfolioPassword = "lloren123";
+
+function setupUpload(formId, inputId, listId, clearBtnId, passwordId) {
+  const form = document.getElementById(formId);
+  const input = document.getElementById(inputId);
+  const list = document.getElementById(listId);
+  const clearBtn = document.getElementById(clearBtnId);
+  const passwordInput = document.getElementById(passwordId);
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    if (passwordInput.value !== portfolioPassword) {
+      alert("Incorrect password. Upload denied.");
+      return;
+    }
+
+    for (let file of input.files) {
+  const li = document.createElement('li');
+
+  // Show file name
+  const fileName = document.createElement('span');
+  fileName.textContent = file.name;
+
+  // Show image preview (only if it's an image)
+  if (file.type.startsWith("image/")) {
+    const imgPreview = document.createElement('img');
+    imgPreview.src = URL.createObjectURL(file);
+    imgPreview.style.width = "500px";   // adjust size
+    imgPreview.style.height = "auto";
+    imgPreview.style.borderRadius = "6px";
+    imgPreview.style.marginRight = "10px";
+    li.appendChild(imgPreview);
+  }
+
+  li.appendChild(fileName);
+
+  // Delete button
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = "Delete";
+  deleteBtn.style.backgroundColor = "#e53935";
+  deleteBtn.style.color = "white";
+  deleteBtn.style.marginLeft = "10px";
+
+  deleteBtn.addEventListener('click', function() {
+    if (passwordInput.value !== portfolioPassword) {
+      alert("Incorrect password. Delete denied.");
+      return;
+    }
+    list.removeChild(li);
+  });
+
+  li.appendChild(deleteBtn);
+  list.appendChild(li);
+}
+
+
+    input.value = ""; // clear input after upload
+  });
+
+  // Clear All button
+  clearBtn.addEventListener('click', function() {
+    if (passwordInput.value !== portfolioPassword) {
+      alert("Incorrect password. Clear denied.");
+      return;
+    }
+    list.innerHTML = '';
+  });
+}
+
+// Apply to each section
+setupUpload('assignmentsForm', 'assignmentsInput', 'assignmentsList', 'clearAssignments', 'assignmentsPassword');
+setupUpload('labsForm', 'labsInput', 'labsList', 'clearLabs', 'labsPassword');
+setupUpload('quizzesForm', 'quizzesInput', 'quizzesList', 'clearQuizzes', 'quizzesPassword');
+setupUpload('examsForm', 'examsInput', 'examsList', 'clearExams', 'examsPassword');
+
+  </script>
+</body>
+</html>
