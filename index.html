@@ -350,23 +350,24 @@ function setupUpload(formId, inputId, listId, clearBtnId, passwordId) {
     for (let file of input.files) {
   const li = document.createElement('li');
 
-  // Show file name
-  const fileName = document.createElement('span');
-  fileName.textContent = file.name;
-
-  // Show image preview (only if it's an image)
+  // Show image preview
   if (file.type.startsWith("image/")) {
     const imgPreview = document.createElement('img');
     imgPreview.src = URL.createObjectURL(file);
-    imgPreview.style.width = "500px";   // adjust size
+    imgPreview.style.width = "500px";
     imgPreview.style.height = "auto";
     imgPreview.style.borderRadius = "6px";
     imgPreview.style.marginRight = "10px";
     li.appendChild(imgPreview);
   }
 
+  // Show file name
+  const fileName = document.createElement('span');
+  fileName.textContent = file.name;
   li.appendChild(fileName);
 
+  list.appendChild(li);
+}
   // Delete button
   const deleteBtn = document.createElement('button');
   deleteBtn.textContent = "Delete";
