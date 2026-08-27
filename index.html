@@ -271,23 +271,30 @@
     </div>
   </section>
 
-  <!-- Quizzes Section -->
-  <section id="quizzes">
-    <div class="upload-box">
-      <h1>Quizzes</h1>
-      <p>Upload your quizzes here:</p>
-      <form id="quizzesForm">
-  <input type="file" id="quizzesInput" multiple>
-  <input type="password" id="quizzesPassword" placeholder="Enter password" required>
-  <button type="submit">Upload</button>
-  <button type="button" id="clearQuizzes">Clear All</button>
-</form>
-    </div>
-    <div class="uploaded-box">
-      <h2>Uploaded Quizzes</h2>
-      <ul id="quizzesList"></ul>
-    </div>
-  </section>
+<!-- Quizzes Section -->
+<section id="quizzes">
+  <div class="upload-box">
+    <h1>Quizzes</h1>
+    <p>Upload your quizzes here:</p>
+    <form id="quizzesForm">
+      <input type="file" id="quizzesInput" multiple accept=".pdf,image/*">
+      <input type="password" id="quizzesPassword" placeholder="Enter password" required>
+      <button type="submit">Upload</button>
+      <button type="button" id="clearQuizzes">Clear All</button>
+    </form>
+  </div>
+
+  <!-- 🔹 Uploaded Quizzes -->
+  <div class="uploaded-box">
+    <h2>Uploaded Quizzes</h2>
+    <ul id="quizzesList">
+      <!-- Example: Image from repo -->
+      <li>
+        <img src="Images/Quiz1.png" alt="Quiz 1" width="500">
+      </li>
+    </ul>
+  </div>
+</section>
 
   <!-- Examinations Section -->
   <section id="examinations">
