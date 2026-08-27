@@ -252,24 +252,29 @@
     </div>
   </section>
 
-  <!-- Laboratories Section -->
-  <section id="laboratories">
-    <div class="upload-box">
-      <h1>Laboratories</h1>
-      <p>Upload your laboratory work here:</p>
-      <form id="labsForm">
-  <input type="file" id="labsInput" multiple>
-  <input type="password" id="labsPassword" placeholder="Enter password" required>
-  <button type="submit">Upload</button>
-  <button type="button" id="clearLabs">Clear All</button>
-</form>
+<!-- Laboratories Section -->
+<section id="laboratories">
+  <div class="upload-box">
+    <h1>Laboratories</h1>
+    <p>Upload your laboratory work here:</p>
+    <form id="labsForm">
+      <input type="file" id="labsInput" multiple accept=".pdf,image/*">
+      <input type="password" id="labsPassword" placeholder="Enter password" required>
+      <button type="submit">Upload</button>
+      <button type="button" id="clearLabs">Clear All</button>
+    </form>
+  </div>
 
-    </div>
-    <div class="uploaded-box">
-      <h2>Uploaded Labs</h2>
-      <ul id="labsList"></ul>
-    </div>
-  </section>
+  <div class="uploaded-box">
+    <h2>Uploaded Labs</h2>
+    <ul id="labsList">
+      <!-- Example: PDF from repo -->
+      <li>
+        <a href="PDF/Lloren - Lab1.pdf" target="_blank">Lab 1 (PDF)</a>
+      </li>
+    </ul>
+  </div>
+</section>
 
 <!-- Quizzes Section -->
 <section id="quizzes">
@@ -350,7 +355,10 @@ function setupUpload(formId, inputId, listId, clearBtnId, passwordId) {
     for (let file of input.files) {
   const li = document.createElement('li');
 
-  // Show image preview
+ for (let file of input.files) {
+  const li = document.createElement('li');
+
+  // Show image preview (only if it's an image)
   if (file.type.startsWith("image/")) {
     const imgPreview = document.createElement('img');
     imgPreview.src = URL.createObjectURL(file);
@@ -361,6 +369,16 @@ function setupUpload(formId, inputId, listId, clearBtnId, passwordId) {
     li.appendChild(imgPreview);
   }
 
+  // Show PDF link (only if it's a PDF)
+  if (file.type === "application/pdf") {
+    const pdfLink = document.createElement('a');
+    pdfLink.href = URL.createObjectURL(file);
+    pdfLink.textContent = "Open PDF";
+    pdfLink.target = "_blank";
+    pdfLink.style.marginRight = "10px";
+    li.appendChild(pdfLink);
+  }
+
   // Show file name
   const fileName = document.createElement('span');
   fileName.textContent = file.name;
@@ -368,25 +386,6 @@ function setupUpload(formId, inputId, listId, clearBtnId, passwordId) {
 
   list.appendChild(li);
 }
-  // Delete button
-  const deleteBtn = document.createElement('button');
-  deleteBtn.textContent = "Delete";
-  deleteBtn.style.backgroundColor = "#e53935";
-  deleteBtn.style.color = "white";
-  deleteBtn.style.marginLeft = "10px";
-
-  deleteBtn.addEventListener('click', function() {
-    if (passwordInput.value !== portfolioPassword) {
-      alert("Incorrect password. Delete denied.");
-      return;
-    }
-    list.removeChild(li);
-  });
-
-  li.appendChild(deleteBtn);
-  list.appendChild(li);
-}
-
 
     input.value = ""; // clear input after upload
   });
