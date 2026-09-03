@@ -267,22 +267,18 @@
 
   <div class="uploaded-box">
     <h2>Uploaded Labs</h2>
-    <ul id="labsList">
-      <a href="PDF/Lloren - Lab1.pdf" target="_blank" download>
-  <img src="Images/laboratory 1 SS.png" alt="     Laboratory 1">
-</a>
-<div class="caption">---   Laboratory 1   ---</div>
-      
-       <a href="PDF/Lloren - Lab 2.pdf" target="_blank" download>
-  <img src="Images/laboratory 2 SS.png" alt="     Laboratory 2">
-</a>
-<div class="caption">---   Laboratory 2  ---</div>
 
+    <div class="lab-item">
+        <a href="PDF/Lloren - Lab1.pdf" target="_laboratory 1 SS.png
         </a>
-      </li>
-    </ul>
-  </div>
-</section>
+        <div class="caption">--- Laboratory 1 ---</div>
+    </div>
+
+    <div class="lab-item">
+        PDF/Lloren - Lab 2.pdf
+            <img src="Images/laboratory 2 SS.png" alt="     <div class="caption">--- Laboratory 2 ---</div>
+    </div>
+</div>
 <!-- Quizzes Section -->
 <section id="quizzes">
   <div class="upload-box">
@@ -401,5 +397,43 @@ function setupUpload(formId, inputId, listId, clearBtnId, passwordId) {
       return;
     }
     list.innerHTML = ""; 
+
+    <head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .uploaded-box {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .uploaded-box h2 {
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+
+        .lab-item {
+            margin-bottom: 25px;
+        }
+
+        .lab-item img {
+            width: 180px;
+            height: auto;
+            border: 1px solid #ccc;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .caption {
+            margin-top: 8px;
+            font-weight: bold;
+            color: #000;
+        }
+
+    </style>
+</head>
   });
 }
