@@ -385,11 +385,11 @@ function setupUpload(formId, inputId, listId, clearBtnId, passwordId) {
         li.appendChild(pdfLink);
       }
 
-    .pdf-container {
+   .pdf-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+  flex-wrap: wrap;        /* para mag‑wrap kapag maliit ang screen */
+  justify-content: center; /* para nasa gitna */
+  gap: 25px;              /* pagitan ng bawat item */
 }
 
 .pdf-item {
@@ -398,7 +398,7 @@ function setupUpload(formId, inputId, listId, clearBtnId, passwordId) {
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  width: 150px;
+  width: 180px;
   transition: transform 0.3s;
 }
 
@@ -407,17 +407,17 @@ function setupUpload(formId, inputId, listId, clearBtnId, passwordId) {
 }
 
 .pdf-item img {
-  width: 100px;
+  width: 150px;
   height: auto;
+  border-radius: 8px;
   margin-bottom: 8px;
 }
 
 .pdf-item p {
   font-weight: 600;
   color: #1565c0;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
-
 
       // Show file name
       const fileName = document.createElement('span');
