@@ -336,7 +336,7 @@
     </div>
   </footer>
 
-  <script>// Set your chosen password
+  <script>//// Set your chosen password
 const portfolioPassword = "lloren123";
 
 function setupUpload(formId, inputId, listId, clearBtnId, passwordId) {
@@ -355,39 +355,36 @@ function setupUpload(formId, inputId, listId, clearBtnId, passwordId) {
     }
 
     for (let file of input.files) {
-  const li = document.createElement('li');
+      const li = document.createElement('li');
 
- for (let file of input.files) {
-  const li = document.createElement('li');
+      // Show image preview (only if it's an image)
+      if (file.type.startsWith("image/")) {
+        const imgPreview = document.createElement('img');
+        imgPreview.src = URL.createObjectURL(file);
+        imgPreview.style.width = "500px";
+        imgPreview.style.height = "auto";
+        imgPreview.style.borderRadius = "6px";
+        imgPreview.style.marginRight = "10px";
+        li.appendChild(imgPreview);
+      }
 
-  // Show image preview (only if it's an image)
-  if (file.type.startsWith("image/")) {
-    const imgPreview = document.createElement('img');
-    imgPreview.src = URL.createObjectURL(file);
-    imgPreview.style.width = "500px";
-    imgPreview.style.height = "auto";
-    imgPreview.style.borderRadius = "6px";
-    imgPreview.style.marginRight = "10px";
-    li.appendChild(imgPreview);
-  }
+      // Show PDF link (only if it's a PDF)
+      if (file.type === "application/pdf") {
+        const pdfLink = document.createElement('a');
+        pdfLink.href = URL.createObjectURL(file);
+        pdfLink.textContent = "Open PDF";
+        pdfLink.target = "_blank";
+        pdfLink.style.marginRight = "10px";
+        li.appendChild(pdfLink);
+      }
 
-  // Show PDF link (only if it's a PDF)
-  if (file.type === "application/pdf") {
-    const pdfLink = document.createElement('a');
-    pdfLink.href = URL.createObjectURL(file);
-    pdfLink.textContent = "Open PDF";
-    pdfLink.target = "_blank";
-    pdfLink.style.marginRight = "10px";
-    li.appendChild(pdfLink);
-  }
+      // Show file name
+      const fileName = document.createElement('span');
+      fileName.textContent = file.name;
+      li.appendChild(fileName);
 
-  // Show file name
-  const fileName = document.createElement('span');
-  fileName.textContent = file.name;
-  li.appendChild(fileName);
-
-  list.appendChild(li);
-}
+      list.appendChild(li);
+    }
 
     input.value = ""; // clear input after upload
   });
@@ -398,16 +395,6 @@ function setupUpload(formId, inputId, listId, clearBtnId, passwordId) {
       alert("Incorrect password. Clear denied.");
       return;
     }
-    list.innerHTML = '';
+    list.innerHTML = ""; 
   });
 }
-
-// Apply to each section
-setupUpload('assignmentsForm', 'assignmentsInput', 'assignmentsList', 'clearAssignments', 'assignmentsPassword');
-setupUpload('labsForm', 'labsInput', 'labsList', 'clearLabs', 'labsPassword');
-setupUpload('quizzesForm', 'quizzesInput', 'quizzesList', 'clearQuizzes', 'quizzesPassword');
-setupUpload('examsForm', 'examsInput', 'examsList', 'clearExams', 'examsPassword');
-
-  </script>
-</body>
-</html>
