@@ -1,441 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lance's Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lance's Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  body{margin:0;font-family:'Segoe UI',Arial,sans-serif;
+    background:url('https://i.pinimg.com/originals/38/6f/98/386f9898fcc92dd39f9fe5d15968c6b0.jpg?nii=t') no-repeat center center fixed;
+    background-size:cover;color:#0d47a1;scroll-behavior:smooth}
+  .navbar{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.95);
+    padding:10px 60px;box-shadow:0 2px 6px rgba(0,0,0,.2);position:fixed;top:0;left:0;width:100%;z-index:1000;box-sizing:border-box}
+  .logo-name{margin:0;font-family:'Great Vibes',cursive;font-size:2.2rem;color:#1565c0;font-weight:normal}
+  .nav-links{display:flex;gap:25px;margin-right:40px}
+  .nav-links a{text-decoration:none;color:#0d47a1;font-weight:500;padding:6px 12px;border-radius:5px;transition:.3s}
+  .nav-links a:hover{background:#1565c0;color:#fff}
+  section{min-height:100vh;padding:100px 40px 60px;margin-bottom:40px}
+  .box{background:rgba(255,255,255,.95);padding:30px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,.15);margin-bottom:25px;animation:fadeIn .5s ease-in-out}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  h1,h2{color:#1565c0;margin-top:0}
+  .home-container{display:flex;align-items:center;justify-content:space-between;gap:60px}
+  .home-left{flex:1;display:flex;justify-content:center}
+  .home-right{flex:2;font-size:1.2rem;line-height:1.6}
+  .profile-pic{width:320px;border-radius:50%;border:6px solid #1565c0}
+  ul{list-style:none;padding:0}
+  .contact li{background:#e3f2fd;margin:5px 0;padding:10px;border-radius:5px}
+  .contact a{color:#0d47a1;text-decoration:none}
 
-  <!-- Google Fonts for cursive logo -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: URL('https://i.pinimg.com/originals/38/6f/98/386f9898fcc92dd39f9fe5d15968c6b0.jpg?nii=t') no-repeat center center fixed;
-      background-size: cover;
-      color: #0d47a1;
-      scroll-behavior: smooth;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: rgba(255, 255, 255, 0.95);
-      padding: 10px 60px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      box-sizing: border-box;
-    }
-
-    /* Logo name in cursive */
-    .logo-name {
-      margin: 0;
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.2rem;
-      color: #1565c0;
-      font-weight: normal;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      margin-right: 40px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #0d47a1;
-      font-weight: 500;
-      padding: 6px 12px;
-      border-radius: 5px;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .nav-links a:hover {
-      background-color: #1565c0;
-      color: white;
-    }
-
-    section {
-      min-height: 100vh;
-      padding: 100px 40px 60px;
-      margin-bottom: 40px;
-    }
-
-    .upload-box, .uploaded-box {
-      background-color: rgba(255,255,255,0.95);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      margin-bottom: 25px;
-      animation: fadeIn 0.5s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(10px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    .home-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 60px;
-    }
-
-    .home-left {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-    }
-
-    .home-right {
-      flex: 2;
-      font-size: 1.2rem;
-      line-height: 1.6;
-    }
-
-    .profile-pic {
-      width: 320px;
-      border-radius: 50%;
-      border: 6px solid #1565c0;
-    }
-
-    form {
-      margin-top: 20px;
-    }
-
-    input[type="file"] {
-      padding: 5px;
-    }
-
-    button {
-      background-color: #1565c0;
-      color: white;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-      font-size: 0.9rem;
-      margin-left: 8px;
-    }
-
-    button:hover {
-      background-color: #0d47a1;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    li {
-      background: #e3f2fd;
-      margin: 5px 0;
-      padding: 10px;
-      border-radius: 5px;
-      font-size: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    h1, h2 {
-      color: #1565c0;
-    }
-
-    footer {
-      background-color: rgba(255,255,255,0.95);
-      color: #0d47a1;
-      text-align: center;
-      padding: 20px;
-      box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
-    }
-
-    .footer-container {
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .footer-links {
-      margin-top: 10px;
-    }
-
-    .footer-links a {
-      text-decoration: none;
-      color: #1565c0;
-      margin: 0 8px;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .footer-links a:hover {
-      color: #0d47a1;
-    }
-  </style>
+  /* Prelims / Midterms / Finals tabs */
+  .tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+  .tab{background:#e3f2fd;color:#0d47a1;border:none;padding:10px 22px;border-radius:6px;font-size:1rem;font-weight:600;cursor:pointer;transition:.3s}
+  .tab:hover{background:#bbdefb}
+  .tab.active{background:#1565c0;color:#fff}
+  .grid{display:flex;flex-wrap:wrap;gap:25px}
+  .item{text-align:center;background:#fff;border-radius:10px;padding:15px;box-shadow:0 4px 8px rgba(0,0,0,.2);width:200px;transition:transform .3s}
+  .item:hover{transform:scale(1.05)}
+  .item img{width:100%;height:auto;border-radius:8px;display:block}
+  .item p{font-weight:600;color:#1565c0;font-size:.9rem;margin:8px 0 0}
+  .item small{color:#546e7a}
+  .item a{text-decoration:none}
+  footer{background:rgba(255,255,255,.95);color:#0d47a1;text-align:center;padding:20px;box-shadow:0 -2px 6px rgba(0,0,0,.2)}
+  .footer-links a{text-decoration:none;color:#1565c0;margin:0 8px;font-weight:500}
+  @media(max-width:800px){.navbar{padding:10px 15px;flex-direction:column}.nav-links{gap:6px;margin:0;flex-wrap:wrap;justify-content:center}
+    section{padding:140px 15px 40px}.home-container{flex-direction:column;gap:20px}.profile-pic{width:220px}}
+</style>
 </head>
 <body>
-  <!-- Top Navigation -->
-  <div class="navbar">
-    <h2 class="logo-name">Lance Michael C. Lloren</h2>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#assignments">Assignments</a>
-      <a href="#laboratories">Laboratories</a>
-      <a href="#quizzes">Quizzes</a>
-      <a href="#examinations">Examinations</a>
-    </div>
+
+<div class="navbar">
+  <h2 class="logo-name">Lance Michael C. Lloren</h2>
+  <div class="nav-links">
+    <a href="#home">Home</a><a href="#assignments">Assignments</a><a href="#laboratories">Laboratories</a>
+    <a href="#quizzes">Quizzes</a><a href="#examinations">Examinations</a>
   </div>
+</div>
 
-  <!-- Home Section -->
-  <section id="home">
-    <div class="upload-box">
-      <div class="home-container">
-        <div class="home-left">
-          <img src="Images/dfe04dd3-d10f-45b6-b95a-f379737ff85a.jpg" 
-               alt="Profile Picture" class="profile-pic">
-        </div>
-        <div class="home-right">
-          <h1>Welcome to My Portfolio</h1>
-          <p>Hello! I’m Lance Michael C. Lloren, a BSCS student passionate about learning and growth in Computer Science. This portfolio highlights my projects and skills in programming, web development, and digital design. Over the past two years, I have consistently ranked #1 in my department and placed among the Top 8 students across all colleges, achievements that reflect both discipline and dedication. I am currently running for Summa Cum Laude, a distinction that represents my commitment to excellence and my drive to apply knowledge to real-world challenges in technology.</p>
-          <p>Connect with me:</p>
-          <ul>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<ul>
-  <li>
-    <a href="https://www.facebook.com/lance.michael.lloren123" target="_blank">
-      <i class="fab fa-facebook"></i> Facebook: Lance Michael Lloren
-    </a>
-  </li>
-  <li>
-    <a href="https://accounts.google.com/v3/signin/identifier?continue=https://mail.google.com/mail/?service%3Dmail%26flowName%3DGlifWebSignIn%26flowEntry%3DAccountChooser%26ec%3Dasw-gmail-globalnav-signin&uj=gafb-gmail_asw-globalnav-en&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-133095552:1787750992171066" target="_blank">
-      <i class="fab fa-google"></i> Email: lmlloren@pcu.edu.ph
-    </a>
-  </li>
-  <li>
-    <a href="https://www.instagram.com/" target="_blank">
-      <i class="fab fa-instagram"></i> Instagram: Kaeeeeel
-    </a>
-  </li>
-</ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Assignments Section -->
-  <section id="assignments">
-    <div class="upload-box">
-      <h1>Assignments</h1>
-      <p>Upload your assignments here:</p>
-      <form id="assignmentsForm">
-  <input type="file" id="assignmentsInput" multiple>
-  <!-- Password field -->
-  <input type="password" id="assignmentsPassword" placeholder="Enter password" required>
-  <button type="submit">Upload</button>
-  <button type="button" id="clearAssignments">Clear All</button>
-</form>
-
-      </form>
-    </div>
-    <div class="uploaded-box">
-      <h2>Uploaded Assignments</h2>
-      <ul id="assignmentsList"></ul>
-    </div>
-  </section>
-
-<!-- Laboratories Section -->
-<section id="laboratories">
-  <div class="upload-box">
-    <h1>Laboratories</h1>
-    <p>Upload your laboratory work here:</p>
-    <form id="labsForm">
-      <input type="file" id="labsInput" multiple accept=".pdf,image/*">
-      <input type="password" id="labsPassword" placeholder="Enter password" required>
-      <button type="submit">Upload</button>
-      <button type="button" id="clearLabs">Clear All</button>
-    </form>
-  </div>
-
-  <div class="uploaded-box">
-    <h2>Uploaded Labs</h2>
-    <div class="pdf-container">
-      <div class="pdf-item">
-        <a href="PDF/Lloren - Lab1.pdf" target="_blank">
-          <img src="Images/laboratory 1 SS.png" alt="Laboratory 1 Screenshot">
-        </a>
-        <p>Lloren - Laboratory 1</p>
-      </div>
-
-      <div class="pdf-item">
-        <a href="PDF/Lloren - Lab 2.pdf" target="_blank">
-          <img src="Images/laboratory 2 SS.png" alt="Laboratory 2 Screenshot">
-        </a>
-        <p>Lloren - Laboratory 2 </p>
+<section id="home">
+  <div class="box">
+    <div class="home-container">
+      <div class="home-left"><img src="Images/dfe04dd3-d10f-45b6-b95a-f379737ff85a.jpg" alt="Profile Picture" class="profile-pic"></div>
+      <div class="home-right">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Hello! I’m Lance Michael C. Lloren, a BSCS student passionate about learning and growth in Computer Science. This portfolio highlights my projects and skills in programming, web development, and digital design. Over the past two years, I have consistently ranked #1 in my department and placed among the Top 8 students across all colleges, achievements that reflect both discipline and dedication. I am currently running for Summa Cum Laude, a distinction that represents my commitment to excellence and my drive to apply knowledge to real-world challenges in technology.</p>
+        <p>Connect with me:</p>
+        <ul class="contact">
+          <li><a href="https://www.facebook.com/lance.michael.lloren123" target="_blank"><i class="fab fa-facebook"></i> Facebook: Lance Michael Lloren</a></li>
+          <li><a href="mailto:lmlloren@pcu.edu.ph"><i class="fab fa-google"></i> Email: lmlloren@pcu.edu.ph</a></li>
+          <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i> Instagram: Kaeeeeel</a></li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Quizzes Section -->
-<section id="quizzes">
-  <div class="upload-box">
-    <h1>Quizzes</h1>
-    <p>Upload your quizzes here:</p>
-    <form id="quizzesForm">
-      <input type="file" id="quizzesInput" multiple accept=".pdf,image/*">
-      <input type="password" id="quizzesPassword" placeholder="Enter password" required>
-      <button type="submit">Upload</button>
-      <button type="button" id="clearQuizzes">Clear All</button>
-    </form>
+<!-- Ang laman ng 4 sections na ito ay ginagawa ng script sa baba (DATA) -->
+<section id="assignments"><div class="box"><h1>Assignments</h1></div><div class="box content"></div></section>
+<section id="laboratories"><div class="box"><h1>Laboratories</h1></div><div class="box content"></div></section>
+<section id="quizzes"><div class="box"><h1>Quizzes</h1></div><div class="box content"></div></section>
+<section id="examinations"><div class="box"><h1>Examinations</h1></div><div class="box content"></div></section>
+
+<footer>
+  <p>&copy; 2026 Lance Michael C. Lloren | BSCS Portfolio</p>
+  <p>Crafted with dedication and passion for Computer Science.</p>
+  <div class="footer-links">
+    <a href="#home">Home</a> | <a href="#assignments">Assignments</a> | <a href="#laboratories">Labs</a> |
+    <a href="#quizzes">Quizzes</a> | <a href="#examinations">Exams</a>
   </div>
+</footer>
 
-  <!-- 🔹 Uploaded Quizzes -->
-  <div class="uploaded-box">
-    <h2>Uploaded Quizzes</h2>
-    <ul id="quizzesList">
-      <!-- Example: Image from repo -->
-      <li>
-        <img src="Images/Quiz1.png" alt="Quiz 1" width="500">
-      </li>
-    </ul>
-  </div>
-</section>
+<script>
+/* =====================================================================
+   DITO KA MAG-EDIT / MAG-ADD NG FILES
+   Bawat item: { title, img, pdf }
+     title = pangalan na lalabas
+     img   = picture/screenshot (hal. "Images/Quiz1.png")
+     pdf   = (optional) PDF na made-download agad pag pinindot. Kung wala, 
+             pag pinindot ang picture ay bubukas lang ang larger image.
+   Kung wala pang picture file, "SAMPLE" placeholder ang lalabas.
+   Para mag-add: kopyahin ang isang { ... } line at palitan ang laman.
+   ===================================================================== */
+const DATA = {
+  assignments: {
+    Prelims:  [ { title: "Assignment 1", img: "Images/assignment1.png", pdf: "PDF/Assignment1.pdf" },
+                { title: "Assignment 2", img: "Images/assignment2.png", pdf: "PDF/Assignment2.pdf" } ],
+    Midterms: [ { title: "Assignment 3", img: "Images/assignment3.png", pdf: "PDF/Assignment3.pdf" } ],
+    Finals:   [ { title: "Assignment 4", img: "Images/assignment4.png", pdf: "PDF/Assignment4.pdf" } ]
+  },
+  laboratories: {
+    Prelims:  [ { title: "Lloren - Laboratory 1", img: "Images/laboratory 1 SS.png", pdf: "PDF/Lloren - Lab1.pdf" },
+                { title: "Lloren - Laboratory 2", img: "Images/laboratory 2 SS.png", pdf: "PDF/Lloren - Lab 2.pdf" } ],
+    Midterms: [ { title: "Laboratory 3", img: "Images/laboratory3.png", pdf: "PDF/Lab3.pdf" } ],
+    Finals:   [ { title: "Laboratory 4", img: "Images/laboratory4.png", pdf: "PDF/Lab4.pdf" } ]
+  },
+  quizzes: {
+    Prelims:  [ { title: "Quiz 1", img: "Images/Quiz1.png" },
+                { title: "Quiz 2", img: "Images/Quiz2.png" } ],
+    Midterms: [ { title: "Quiz 3", img: "Images/Quiz3.png" } ],
+    Finals:   [ { title: "Quiz 4", img: "Images/Quiz4.png" } ]
+  },
+  examinations: {
+    Prelims:  [ { title: "Prelim Exam", img: "Images/prelim-exam.png", pdf: "PDF/PrelimExam.pdf" } ],
+    Midterms: [ { title: "Midterm Exam", img: "Images/midterm-exam.png", pdf: "PDF/MidtermExam.pdf" } ],
+    Finals:   [ { title: "Final Exam", img: "Images/final-exam.png", pdf: "PDF/FinalExam.pdf" } ]
+  }
+};
 
-  <!-- Examinations Section -->
-  <section id="examinations">
-    <div class="upload-box">
-      <h1>Examinations</h1>
-      <p>Upload your examinations here:</p>
-      <form id="examsForm">
-  <input type="file" id="examsInput" multiple>
-  <input type="password" id="examsPassword" placeholder="Enter password" required>
-  <button type="submit">Upload</button>
-  <button type="button" id="clearExams">Clear All</button>
-</form>
-    </div>
-    <div class="uploaded-box">
-      <h2>Uploaded Exams</h2>
-      <ul id="examsList"></ul>
-    </div>
-  </section>
+/* Sample placeholder picture (lalabas kapag wala pang totoong image file) */
+function placeholder(label) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+    <rect width="100%" height="100%" fill="#bbdefb"/>
+    <text x="50%" y="45%" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold" fill="#1565c0">SAMPLE</text>
+    <text x="50%" y="62%" text-anchor="middle" font-family="Arial" font-size="15" fill="#0d47a1">${label}</text></svg>`;
+  return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+}
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <p>&copy; 2026 Lance Michael C. Lloren | BSCS Portfolio</p>
-      <p>Crafted with dedication and passion for Computer Science.</p>
-      <div class="footer-links">
-        <a href="#home">Home</a> |
-        <a href="#assignments">Assignments</a> |
-        <a href="#laboratories">Labs</a> |
-        <a href="#quizzes">Quizzes</a> |
-        <a href="#examinations">Exams</a>
-      </div>
-    </div>
-  </footer>
+function renderItems(grid, items) {
+  grid.innerHTML = "";
+  items.forEach(it => {
+    const div = document.createElement("div");
+    div.className = "item";
 
-  <script>//// Set your chosen password
-const portfolioPassword = "lloren123";
-
-function setupUpload(formId, inputId, listId, clearBtnId, passwordId) {
-  const form = document.getElementById(formId);
-  const input = document.getElementById(inputId);
-  const list = document.getElementById(listId);
-  const clearBtn = document.getElementById(clearBtnId);
-  const passwordInput = document.getElementById(passwordId);
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    if (passwordInput.value !== portfolioPassword) {
-      alert("Incorrect password. Upload denied.");
-      return;
+    const a = document.createElement("a");
+    if (it.pdf) {
+      a.href = encodeURI(it.pdf);               // direct download
+      a.setAttribute("download", it.pdf.split("/").pop());
+    } else {
+      a.href = encodeURI(it.img);               // buksan ang picture
+      a.target = "_blank";
     }
 
-    for (let file of input.files) {
-      const li = document.createElement('li');
+    const img = document.createElement("img");
+    img.src = encodeURI(it.img);
+    img.alt = it.title;
+    img.onerror = () => { img.onerror = null; img.src = placeholder(it.title); };
+    a.appendChild(img);
 
-      // Show image preview (only if it's an image)
-      if (file.type.startsWith("image/")) {
-        const imgPreview = document.createElement('img');
-        imgPreview.src = URL.createObjectURL(file);
-        imgPreview.style.width = "500px";
-        imgPreview.style.height = "auto";
-        imgPreview.style.borderRadius = "6px";
-        imgPreview.style.marginRight = "10px";
-        li.appendChild(imgPreview);
-      }
+    const p = document.createElement("p");
+    p.textContent = it.title;
+    div.append(a, p);
 
-      // Show PDF link (only if it's a PDF)
-      if (file.type === "application/pdf") {
-        const pdfLink = document.createElement('a');
-        pdfLink.href = URL.createObjectURL(file);
-        pdfLink.textContent = "Open PDF";
-        pdfLink.target = "_blank";
-        pdfLink.style.marginRight = "10px";
-        li.appendChild(pdfLink);
-      }
-
-   .pdf-container {
-  display: flex;
-  flex-wrap: wrap;        /* para mag‑wrap kapag maliit ang screen */
-  justify-content: center; /* para nasa gitna */
-  gap: 25px;              /* pagitan ng bawat item */
-}
-
-.pdf-item {
-  text-align: center;
-  background-color: rgba(255,255,255,0.9);
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  width: 180px;
-  transition: transform 0.3s;
-}
-
-.pdf-item:hover {
-  transform: scale(1.05);
-}
-
-.pdf-item img {
-  width: 150px;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 8px;
-}
-
-.pdf-item p {
-  font-weight: 600;
-  color: #1565c0;
-  font-size: 0.9rem;
-}
-
-      // Show file name
-      const fileName = document.createElement('span');
-      fileName.textContent = file.name;
-      li.appendChild(fileName);
-
-      list.appendChild(li);
+    if (it.pdf) {
+      const s = document.createElement("small");
+      s.innerHTML = '<i class="fas fa-download"></i> Click to download PDF';
+      div.appendChild(s);
     }
-
-    input.value = ""; // clear input after upload
-  });
-
-  // Clear All button
-  clearBtn.addEventListener('click', function() {
-    if (passwordInput.value !== portfolioPassword) {
-      alert("Incorrect password. Clear denied.");
-      return;
-    }
-    list.innerHTML = ""; 
+    grid.appendChild(div);
   });
 }
+
+Object.keys(DATA).forEach(id => {
+  const wrap = document.querySelector(`#${id} .content`);
+  const tabs = document.createElement("div");
+  tabs.className = "tabs";
+  const grid = document.createElement("div");
+  grid.className = "grid";
+
+  Object.keys(DATA[id]).forEach((term, i) => {
+    const b = document.createElement("button");
+    b.className = "tab" + (i === 0 ? " active" : "");
+    b.textContent = term;
+    b.onclick = () => {
+      tabs.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+      b.classList.add("active");
+      renderItems(grid, DATA[id][term]);
+    };
+    tabs.appendChild(b);
+  });
+
+  wrap.append(tabs, grid);
+  renderItems(grid, DATA[id][Object.keys(DATA[id])[0]]);
+});
+</script>
+</body>
+</html>
