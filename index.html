@@ -160,12 +160,9 @@ function renderItems(grid, items) {
     div.className = "item";
 
     const a = document.createElement("a");
-    if (it.pdf) {
-      a.href = encodeURI(it.pdf);               // direct download
-      a.setAttribute("download", it.pdf.split("/").pop());
-    } else {
-      a.href = encodeURI(it.img);               // buksan ang picture
-      a.target = "_blank";
+    const file = it.pdf || it.img;               // PDF kung meron, kung wala ay yung picture
+    a.href = encodeURI(file);
+    a.setAttribute("download", file.split("/").pop());
     }
 
     const img = document.createElement("img");
@@ -178,10 +175,9 @@ function renderItems(grid, items) {
     p.textContent = it.title;
     div.append(a, p);
 
-    if (it.pdf) {
-      const s = document.createElement("small");
-      s.innerHTML = '<i class="fas fa-download"></i> Click to download PDF';
-      div.appendChild(s);
+    const s = document.createElement("small");
+    s.innerHTML = '<i class="fas fa-download"></i> Click to download';
+    div.appendChild(s);
     }
     grid.appendChild(div);
   });
