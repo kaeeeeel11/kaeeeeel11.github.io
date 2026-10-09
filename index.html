@@ -16,7 +16,12 @@
   .nav-links{display:flex;gap:25px;margin-right:40px}
   .nav-links a{text-decoration:none;color:#0d47a1;font-weight:500;padding:6px 12px;border-radius:5px;transition:.3s}
   .nav-links a:hover{background:#1565c0;color:#fff}
-  section{min-height:100vh;padding:100px 40px 60px;margin-bottom:40px}
+  section{
+  padding:30px 40px;      /* espasyo sa loob ng section */
+  margin-bottom:0;        /* walang dagdag na layo sa baba */
+  scroll-margin-top:90px; /* para hindi matakpan ng navbar kapag pinindot ang menu */
+}
+#home{padding-top:110px;} /* para hindi matakpan ng navbar ang Home sa taas */
   .box{background:rgba(255,255,255,.95);padding:30px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,.15);margin-bottom:25px;animation:fadeIn .5s ease-in-out}
   @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   h1,h2{color:#1565c0;margin-top:0}
